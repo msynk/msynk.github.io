@@ -3,3 +3,12 @@ button {
     color: white;
     background-color: gray;
 }
+
+.result {
+    padding: 1rem;
+    margin-top: 1rem;
+    word-break: break-all;
+    white-space: break-spaces;
+    overflow-wrap: break-word;
+    background-color: lightgray;
+}

@@ -12,6 +12,7 @@ async function createCredential() {
         pubKeyCredParams: [{ alg: -7, type: "public-key" }, { alg: -8, type: "public-key" }, { alg: -257, type: "public-key" }]
     });
     console.log(result);
+    document.querySelector(".result").innerHTML = JSON.stringify(result, null, 2);
 }
 
 async function getCredential() {
@@ -22,4 +23,5 @@ async function getCredential() {
     //     userVerification: "preferred"
     // });
     console.log(result);
+    document.querySelector(".result").innerHTML = JSON.stringify(result, null, 2);
 }
