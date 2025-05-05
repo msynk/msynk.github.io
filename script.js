@@ -8,6 +8,7 @@ async function createCredential() {
         rp: { name: "Butil Verify" },
         user: { id: "ButilVerifyUserId", name: "ButilVerifyUser", displayName: "ButilVerifyUser" },
         authenticatorSelection: { authenticatorAttachment: "platform" },
+        attestation: "direct",
         pubKeyCredParams: [{ alg: -7, type: "public-key" }, { alg: -8, type: "public-key" }, { alg: -257, type: "public-key" }]
     });
     console.log(result);
