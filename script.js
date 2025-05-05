@@ -20,10 +20,10 @@ async function createCredential() {
 
 async function getCredential() {
     // const result = await BitButil.webAuthn.getCredential({ challenge: "Butil Verify Challenge" });
+    document.querySelector(".result").innerHTML = createResult?.rawId;
     const result = await BitButil.webAuthn.getCredential({
         challenge: "Butil Verify Challenge",
-        allowCredentials: [{ id: createResult?.rawId, type: "public-key" }],
-        userVerification: "preferred"
+        allowCredentials: [{ id: createResult?.rawId, type: "public-key" }]
     });
     console.log(result);
     document.querySelector(".result").innerHTML = JSON.stringify(result, null, 2);
