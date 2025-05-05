@@ -16,12 +16,12 @@ async function createCredential() {
 }
 
 async function getCredential() {
-    const result = await BitButil.webAuthn.getCredential({ challenge: "Butil Verify Challenge" });
-    // const result = await BitButil.webAuthn.getCredential({
-    //     challenge: "Butil Verify Challenge",
-    //     allowCredentials: [{ id: "ButilVerifyUserId", type: "public-key" }],
-    //     userVerification: "preferred"
-    // });
+    // const result = await BitButil.webAuthn.getCredential({ challenge: "Butil Verify Challenge" });
+    const result = await BitButil.webAuthn.getCredential({
+        challenge: "Butil Verify Challenge",
+        allowCredentials: [{ id: "ButilVerifyUserId", type: "public-key" }],
+        userVerification: "preferred"
+    });
     console.log(result);
     document.querySelector(".result").innerHTML = JSON.stringify(result, null, 2);
 }
