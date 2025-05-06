@@ -20,8 +20,7 @@
             if (await HeicTo.isHeic(file)) {
                 const conversionResult = await HeicTo({
                     blob: file,
-                    type: "image/jpeg",
-                    quality: 0.5
+                    type: "image/png"
                 });
 
                 var url = URL.createObjectURL(conversionResult);
