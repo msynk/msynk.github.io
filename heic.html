@@ -9,16 +9,14 @@
 
 <body>
 
-    <input type="file" id="fileInput" accept=".heic" onchange="handleOnChange" />
+    <input type="file" id="fileInput" accept=".heic" onchange="handleOnChange(event)" />
     <hr />
     <div id="target" style="width: 100%; height: 100%;"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/heic-to@1.1.12/dist/iife/heic-to.js"></script>
     <script>
-
         async function handleOnChange(event) {
             const file = event.target.files[0];
-
             if (await HeicTo.isHeic(file)) {
                 const conversionResult = await HeicTo({
                     blob: file,
