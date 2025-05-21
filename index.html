@@ -2,26 +2,272 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>msynk github pages</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Saleh Yusefnejad | msynk</title>
+    <style>
+        :root {
+            --bg: #0d1117;
+            --fg: #c9d1d9;
+            --dim: #8b949e;
+            --accent: #58a6ff;
+            --card: #161b22;
+            --highlight: linear-gradient(135deg, #58a6ff, #8b5cf6);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: var(--bg);
+            color: var(--fg);
+            line-height: 1.6;
+            padding: 1rem;
+        }
+
+        header {
+            text-align: center;
+            padding: 3rem 1rem;
+            animation: fadeIn 1s ease-out;
+        }
+
+        header h1 {
+            font-size: 2.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: var(--dim);
+        }
+
+        nav {
+            margin-top: 1.5rem;
+        }
+
+        nav a {
+            color: var(--accent);
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+        section {
+            max-width: 900px;
+            margin: 3rem auto;
+            padding: 0 1rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--card);
+            padding-bottom: 0.25rem;
+        }
+
+        .card {
+            background: var(--card);
+            padding: 1.75rem;
+            margin-bottom: 1.75rem;
+            border-radius: 12px;
+            border: 2px solid transparent;
+            transition: transform 0.3s ease, border 0.4s ease, box-shadow 0.3s ease;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            border-image: var(--highlight) 1;
+            box-shadow: 0 0 25px rgba(88, 166, 255, 0.2);
+        }
+
+        .card h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+            color: var(--accent);
+        }
+
+        .card ul {
+            padding-left: 1.25rem;
+        }
+
+        .card p {
+            color: var(--fg);
+        }
+
+        .card::before {
+            content: "★";
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            background: var(--highlight);
+            color: white;
+            font-size: 0.8rem;
+            padding: 2px 6px;
+            border-radius: 6px;
+            font-weight: bold;
+            opacity: 0.8;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            color: var(--dim);
+            font-size: 0.9rem;
+            border-top: 1px solid #2a2f35;
+            margin-top: 3rem;
+            animation: fadeIn 1s ease-out;
+        }
+
+        a {
+            color: var(--accent);
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            nav a {
+                display: block;
+                margin: 0.5rem 0;
+            }
+
+            .card::before {
+                font-size: 0.7rem;
+                top: -8px;
+                left: -8px;
+            }
+        }
+
+        .tag {
+            margin: 0;
+            font-size: 85%;
+            padding: .2em .4em;
+            border-radius: 6px;
+            white-space: break-spaces;
+            background-color: #0d1117;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <h1>msynk github pages @ msynk.github.io!</h1>
-    <button onclick="greet()">Greeting...</button>
-    <a href="heic.html">heic-to</a>
-    <hr />
-    <div>v 0.7</div>
-    <br />
-    <button onclick="createCredential()">Create Credential</button>
-    <br /><br />
-    <button onclick="getCredential()">Get Credential</button>
-    <hr />
-    <div class="result"></div>
-    <script src="script.js"></script>
-    <script src="butil.js"></script>
+
+    <header>
+        <h1>👋 Hi, I'm Saleh</h1>
+        <p>Co-Founder @bitplatform | Full-stack .NET & Blazor Developer | Open Source Advocate</p>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#hobbies">Hobbies</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>👨‍💻 About Me</h2>
+        <div class="card">
+            <p>
+                I'm a developer and co-founder of <a href="https://bitplatform.dev" target="_blank">BitPlatform</a>
+                where I focus on delivering tools that make .NET and Blazor development more powerful and productive.
+                I'm also passionate about systems design, performance, and clean architecture.
+            </p>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>🚀 Featured Projects</h2>
+
+        <div class="card">
+            <h3><a href="https://github.com/bitfoundation/bitplatform" target="_blank">BitPlatform</a></h3>
+            <p>A scalable platform for building modern web apps with .NET and Blazor. Focused on clean patterns and
+                developer experience.</p>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>🛠️ Skills</h2>
+        <div class="card">
+            <ul>
+                <li><b class="tag">.NET</b>, <b class="tag">C#</b>, <b class="tag">Blazor</b></li>
+                <li><b class="tag">TypeScript</b> & <b class="tag">JavaScript</b></li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="hobbies">
+        <h2>🎮 Hobbies</h2>
+        <div class="card">
+            <p>
+                I enjoy exploring philosophy, manga, anime, productivity hacks, and building side projects for fun and
+                learning.
+            </p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>📬 Contact</h2>
+        <div class="card">
+            <p>
+                Connect with me on <a href="https://github.com/msynk" target="_blank">GitHub</a>, <a
+                    href="https://linkedin.com/in/msynk" target="_blank">LinkedIn</a>, or <a
+                    href="https://x.com/SalehYusefnejad" target="_blank">X</a>.
+            </p>
+        </div>
+    </section>
+
+    <section id="links">
+        <h2>📬 Links</h2>
+        <div class="card">
+            <ul>
+                <li><a href="heic.html">heic</a></li>
+                <li><a href="test.html">test</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <p>© <span id="year"></span> Saleh Yusefnejad (msynk)</p>
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+
 </body>
 
 </html>

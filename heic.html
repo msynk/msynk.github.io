@@ -10,20 +10,23 @@
 <body>
 
     <input type="file" id="fileInput" accept=".heic" onchange="handleOnChange(event)" />
+    <div>status: <span id="status"></span></div>
     <hr />
     <div id="target" style="width: 100%; height: 100%;"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/heic-to@1.1.12/dist/iife/heic-to.js"></script>
     <script>
+        const status = document.getElementById("status");
         async function handleOnChange(event) {
             const file = event.target.files[0];
+            const type = "image/png";
             if (await HeicTo.isHeic(file)) {
-                const conversionResult = await HeicTo({
-                    blob: file,
-                    type: "image/png"
-                });
+                status.innerText = "converting...";
+                const result = await HeicTo({ blob: file, type });
+                status.innerText = "done";
+                new File([result], 'image.png', { type, lastModified: Date.now() });
 
-                var url = URL.createObjectURL(conversionResult);
+                var url = URL.createObjectURL(result);
                 document.getElementById("target").innerHTML = `<a target="_blank" href="${url}"><img src="${url}"></a>`;
             }
         }
