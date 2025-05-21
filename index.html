@@ -10,23 +10,23 @@
             --bg: #0d1117;
             --fg: #c9d1d9;
             --dim: #8b949e;
-            --accent: #58a6ff;
             --card: #161b22;
+            --accent: #58a6ff;
             --highlight: linear-gradient(135deg, #58a6ff, #8b5cf6);
         }
 
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            font-family: 'Courier New', monospace;
-            background-color: var(--bg);
+            padding: 1rem;
             color: var(--fg);
             line-height: 1.6;
-            padding: 1rem;
+            background-color: var(--bg);
+            font-family: 'Courier New', monospace;
         }
 
         header {
@@ -50,10 +50,10 @@
         }
 
         nav a {
-            color: var(--accent);
-            text-decoration: none;
             margin: 0 1rem;
             font-weight: bold;
+            color: var(--accent);
+            text-decoration: none;
             transition: color 0.3s;
         }
 
@@ -62,28 +62,28 @@
         }
 
         section {
+            padding: 0 1rem;
             max-width: 900px;
             margin: 3rem auto;
-            padding: 0 1rem;
             animation: fadeInUp 0.8s ease-out;
         }
 
         h2 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
-            border-bottom: 1px solid var(--card);
             padding-bottom: 0.25rem;
+            border-bottom: 1px solid var(--card);
         }
 
         .card {
-            background: var(--card);
             padding: 1.75rem;
-            margin-bottom: 1.75rem;
-            border-radius: 12px;
-            border: 2px solid transparent;
-            transition: transform 0.3s ease, border 0.4s ease, box-shadow 0.3s ease;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
             position: relative;
+            border-radius: 12px;
+            margin-bottom: 1.75rem;
+            background: var(--card);
+            border: 2px solid transparent;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, border 0.4s ease, box-shadow 0.3s ease;
         }
 
         .card:hover {
@@ -93,9 +93,9 @@
         }
 
         .card h3 {
-            margin-bottom: 0.5rem;
             font-size: 1.3rem;
             color: var(--accent);
+            margin-bottom: 0.5rem;
         }
 
         .card ul {
@@ -107,27 +107,27 @@
         }
 
         .card::before {
-            content: "★";
-            position: absolute;
             top: -10px;
             left: -10px;
-            background: var(--highlight);
-            color: white;
-            font-size: 0.8rem;
-            padding: 2px 6px;
-            border-radius: 6px;
-            font-weight: bold;
             opacity: 0.8;
+            content: "★";
+            color: white;
+            padding: 2px 6px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            position: absolute;
+            border-radius: 6px;
+            background: var(--highlight);
         }
 
         footer {
-            text-align: center;
-            padding: 2rem 1rem;
-            color: var(--dim);
-            font-size: 0.9rem;
-            border-top: 1px solid #2a2f35;
             margin-top: 3rem;
+            font-size: 0.9rem;
+            color: var(--dim);
+            padding: 2rem 1rem;
+            text-align: center;
             animation: fadeIn 1s ease-out;
+            border-top: 1px solid #2a2f35;
         }
 
         a {
@@ -145,9 +145,9 @@
             }
 
             .card::before {
-                font-size: 0.7rem;
                 top: -8px;
                 left: -8px;
+                font-size: 0.7rem;
             }
         }
 
@@ -256,6 +256,7 @@
             <ul>
                 <li><a href="heic.html">heic</a></li>
                 <li><a href="test.html">test</a></li>
+                <li><a href="webpay.html">webpay</a></li>
             </ul>
         </div>
     </section>
